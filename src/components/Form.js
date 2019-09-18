@@ -1,20 +1,39 @@
-import React from 'react';
+// import React, {Component} from 'react';
 
-import Title from './Title.js';
-import Input from './Input.js';
-import Error from './Error.js';
-import Button from './Button.js';
+// import Title from './Title.js';
+// import Input from './Input.js';
+// import Error from './Error.js';
+// import Button from './Button.js';
 
-function Form(){
-    return(
-        <form className = 'form column'>
-            <Title />
-            <Input type = 'email' placeholder = 'email'/>
-            <Input type = 'password' placeholder = 'password'/>
-            <Error />
-            <Button />
-        </form>
-    )
-}
+// class Form extends Component{
+//     constructor(props) {
+//         super(props);
+//         this.state = {value: ''};
+    
+//         this.handleChange = this.handleChange.bind(this);
+//         this.handleSubmit = this.handleSubmit.bind(this);
+//     }
 
-export default Form;
+//     handleChange(event) {
+//         this.setState({value: event.target.value});
+//     }
+    
+//     handleSubmit(event) {
+//         console.log('Отправленное имя: ' + this.state.value);
+//         event.preventDefault();
+//     }
+    
+//     render(){
+//         return(
+//             <form className = 'form column' onClick = {this.handleSubmit}>
+//                 <Title />
+//                 <Input type = 'email' placeholder = 'email' value={this.state.value} onChange={this.handleChange}/>
+//                 <Input type = 'password' placeholder = 'password' value={this.state.value} onChange={this.handleChange}/>
+//                 <Error />
+//                 <Button className = 'button' type = 'submit'/>
+//             </form>
+//         )
+//     }
+// }
+
+// export default Form;

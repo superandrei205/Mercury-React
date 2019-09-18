@@ -1,9 +1,9 @@
-import React from 'react';
+// import React from 'react';
 
-function Title(){
-    return(
-        <h2 className = 'title text'>Log in</h2>
-    )
-}
+// function Title(){
+//     return(
+//         <h2 className = 'title text'>Log in</h2>
+//     )
+// }
 
-export default Title;
+// export default Title;

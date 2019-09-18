@@ -1,9 +1,9 @@
-import React from 'react';
+// import React from 'react';
 
-function Button(){
-    return(
-        <button className = 'button' type = 'submit'>Login</button>
-    )
-}
+// function Button(props){
+//     return(
+//         <button>Login</button>
+//     )
+// }
 
-export default Button;
+// export default Button;
