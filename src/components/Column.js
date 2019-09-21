@@ -1,111 +1,119 @@
 import React, {Component} from 'react';
 
-// import Logo from './Logo.js';
-// import Form from './Form.js';
+import Logo from './Logo.js';
+import LoginPage from './LoginPage.js';
+import ProfilePage from './ProfilePage.js';
 
-// const METHOD = 'POST';
-// const API_URL = 'https://us-central1-mercdev-academy.cloudfunctions.net/login';
-// const HEADERS = new Headers({ 'Content-Type': 'application/json' });
+const METHOD = 'POST';
+const API_URL = 'https://us-central1-mercdev-academy.cloudfunctions.net/login';
+const HEADERS = new Headers({ 'Content-Type': 'application/json' });
 
 class Column extends Component{
-    render(){
-        return(
-            <div className = 'column'>
-                <Logo />
-                <Form />
-            </div>
-        )
-    }
-}
-
-function Logo(){
-    return(
-        <div className = 'logo'></div>
-    )
-}
-
-class Form extends Component{
     constructor(props) {
         super(props);
         this.state = {
+            name: '',
+            photo: '',
             email: '',
-            password: '',
-            error: false,
-            foto: '',
-            name: ''
+            password:'',
+            displayLogin: 'flex' ,
+            displayProfile: 'none',
+            error: ''
         };
-    
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.getName = this.getName.bind(this)
+        this.login = this.login.bind(this);
+        this.setProfile = this.setProfile.bind(this);
+        this.renderName = this.renderName.bind(this);
+        this.removeProfile = this.removeProfile.bind(this)
+
     }
 
     handleEmailChange(event) {
-        console.log(event.target.value);
+        if(this.state.error){
+            this.setState({
+                error: ''
+            })
+        }
         this.setState({email: event.target.value});
     }
 
     handlePasswordChange(event) {
-        console.log(event.target.value);
+        if(this.state.error){
+            this.setState({
+                error: ''
+            })
+        }
         this.setState({password: event.target.value});
+    }
+
+    login(data = {}) {
+        return fetch(API_URL, {
+          method: METHOD,
+          headers: HEADERS,
+          body: JSON.stringify(data)
+        }).then(response => response.json());
+      }
+    
+    setProfile(name, profile) {
+        if (name && profile) document.cookie = `${name}=${profile}`;
+      }
+
+    renderName(data){
+        this.setState({name: data.name});
+        this.setState({photo: data.photoUrl});
+        this.setState({displayLogin: 'none', displayProfile: 'flex'})
     }
     
     handleSubmit(event) {
-        return fetch('https://us-central1-mercdev-academy.cloudfunctions.net/login',
-        {
-            method: 'POST',
-            headers: new Headers({ 'Content-Type': 'application/json' }),
-            body: JSON.stringify({
-                email: this.state.email,
-                password: this.state.password
-            })
-          }).then(response => {
-             response.json()
-        }).then((data=>{
-            console.log(JSON.stringify(data))
-        }))
-        
+
         event.preventDefault();
         event.stopPropagation();
+
+          this.login({
+            email: this.state.email,
+            password: this.state.password
+          })
+          .then(data => {
+            if (data.error) {
+              console.error(data.error);
+              document.querySelector('.error').style.display = 'block';
+              this.setState({error: 'input__error'})
+              return;
+            }
+
+            document.querySelector('.error').style.display = 'none';
+            this.setProfile('profile', JSON.stringify(data));
+            this.renderName(data);
+            console.log(data);
+          })
+
     }
 
+    removeProfile(event){
+        event.preventDefault();
+        event.stopPropagation();
+        this.setState({
+            name: '',
+            photo: '',
+            displayLogin: 'flex',
+            displayProfile: 'none',
+            email: '',
+            password:'',
+            error: ''
+        })
+    }
 
     render(){
         return(
-            <form className = 'form column' onSubmit = {this.handleSubmit}>
-                <Title />
-                <Input type = 'email' placeholder = 'email' value={this.state.email} onChange={this.handleEmailChange}/>
-                <Input type = 'password' placeholder = 'password' value={this.state.password} onChange={this.handlePasswordChange}/>
-                <Error />
-                <Button />
-            </form>
+            <div className = 'column'>
+                <Logo />
+                <LoginPage display={this.state.displayLogin} handleSubmit = {this.handleSubmit} handleEmailChange = {this.handleEmailChange} handlePasswordChange={this.handlePasswordChange} error = {this.state.error}/>
+                <ProfilePage display={this.state.displayProfile} log_out = {this.state.log_out} name = {this.state.name} photo = {this.state.photo} removeProfile = {this.removeProfile}/>
+            </div>
         )
     }
-}
-
-function Title(){
-    return(
-        <h2 className = 'title text'>Log in</h2>
-    )
-}
-
-function Input(props){
-    return(
-        <input className = 'input email' type = {props.type} placeholder = {props.placeholder} required onChange ={props.onChange} value = {props.value}/>  
-    )
-}
-
-function Error(){
-    return(
-        <div className = 'error'>E-mail or password is incorrect</div>
-    )
-}
-
-function Button(props){
-    return(
-        <button className = 'button' type = 'submit'>Login</button>
-    )
 }
 
 export default Column;
