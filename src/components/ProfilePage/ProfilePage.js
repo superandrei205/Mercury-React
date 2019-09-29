@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 
-import Photo from "./Photo.js";
-import Name from "./Name.js";
-import Button from "./Button.js";
+import './ProfilePage.css';
+
+import Photo from "./Photo/Photo.js";
+import Name from "./Name/Name.js";
+import Button from "./Button/Button.js";
 
 class ProfilePage extends Component {
   constructor(props) {
@@ -13,7 +15,7 @@ class ProfilePage extends Component {
   render() {
     return (
       <form
-        className="form column"
+        className="profile-form column"
         onSubmit={this.props.removeProfile}
         style={{ display: `${this.props.display}` }}
       >

@@ -1,0 +1,17 @@
+.photo {
+    width: 128px;
+    height: 128px;
+    border: solid 1px #979797;
+    border-radius: 64px;
+  
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+@media screen and (max-width: 720px) {
+  .photo {
+    width: 86px;
+    height: 86px;
+  }
+}

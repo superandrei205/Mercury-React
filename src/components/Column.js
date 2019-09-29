@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 
-import Logo from "./Logo.js";
-import LoginPage from "./LoginPage.js";
-import ProfilePage from "./ProfilePage.js";
+import LoginPage from "./LoginPage/LoginPage.js";
+import ProfilePage from "./ProfilePage/ProfilePage.js";
 
 const METHOD = "POST";
 const API_URL = "https://us-central1-mercdev-academy.cloudfunctions.net/login";
@@ -75,12 +74,12 @@ class Column extends Component {
     }).then(data => {
       if (data.error) {
         console.error(data.error);
-        document.querySelector(".error").style.display = "block";
-        this.setState({ error: "input__error" });
+        document.querySelector(".search-form__error").style.display = "block";
+        this.setState({ error: "search-form__input_error" });
         return;
       }
 
-      document.querySelector(".error").style.display = "none";
+      document.querySelector(".search-form__error").style.display = "none";
       this.setProfile("profile", JSON.stringify(data));
       this.renderName(data);
       console.log(data);
@@ -105,7 +104,7 @@ class Column extends Component {
   render() {
     return (
       <div className="column">
-        <Logo />
+        <div className="logo"></div>
         <LoginPage
           display={this.state.displayLogin}
           handleSubmit={this.handleSubmit}

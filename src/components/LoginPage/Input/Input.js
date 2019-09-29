@@ -1,5 +1,9 @@
 import React from "react";
 
+import './Input.css';
+import './Input__email.css';
+import './input__password.css';
+
 function Input(props) {
   return (
     <input
