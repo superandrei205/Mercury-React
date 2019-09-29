@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import './App.css';
+import "./App.css";
 
 import LoginPage from "./LoginPage/LoginPage.js";
 import ProfilePage from "./ProfilePage/ProfilePage.js";
