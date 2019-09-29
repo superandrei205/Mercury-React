@@ -57,26 +57,13 @@ body {
 }
 
 @media screen and (max-width: 1280px) {
-  .search-form {
-    margin-bottom: 200px;
-    padding: 40px 32px 56px;
-    width: 50%;
-  }
-
   .logo {
     margin: 70px auto;
   }
 }
 
 @media screen and (max-width: 720px) {
- .search-form {
-    margin-bottom: 107px;
-    padding: 32px 24px 48px;
-    width: 80%;
-  }
-
   .logo {
     margin: 43px auto 37px;
-  }
-  
+  } 
 }

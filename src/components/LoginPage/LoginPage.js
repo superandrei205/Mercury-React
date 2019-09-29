@@ -16,7 +16,7 @@ class LoginPage extends Component {
   render() {
     return (
       <form
-        className="search-form column"
+        className="search-form search-column"
         onSubmit={this.props.handleSubmit}
         style={{ display: `${this.props.display}` }}
       >

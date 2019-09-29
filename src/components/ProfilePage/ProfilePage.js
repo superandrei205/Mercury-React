@@ -15,7 +15,7 @@ class ProfilePage extends Component {
   render() {
     return (
       <form
-        className="profile-form column"
+        className="profile-form profile-column"
         onSubmit={this.props.removeProfile}
         style={{ display: `${this.props.display}` }}
       >
