@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import './Column.css';
+
 import LoginPage from "./LoginPage/LoginPage.js";
 import ProfilePage from "./ProfilePage/ProfilePage.js";
 
