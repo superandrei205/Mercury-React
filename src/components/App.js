@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import './Column.css';
+import './App.css';
 
 import LoginPage from "./LoginPage/LoginPage.js";
 import ProfilePage from "./ProfilePage/ProfilePage.js";
@@ -9,7 +9,7 @@ const METHOD = "POST";
 const API_URL = "https://us-central1-mercdev-academy.cloudfunctions.net/login";
 const HEADERS = new Headers({ "Content-Type": "application/json" });
 
-class Column extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -125,4 +125,4 @@ class Column extends Component {
   }
 }
 
-export default Column;
+export default App;
