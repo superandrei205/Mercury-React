@@ -1,10 +1,10 @@
 import React from "react";
 
-import './Button.css';
+import "./Button.css";
 
 function Button(props) {
   return (
-    <button className='search-form__button' type="submit">
+    <button className="signIn-form__button" type="submit">
       {props.text}
     </button>
   );
