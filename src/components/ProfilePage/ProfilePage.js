@@ -4,7 +4,7 @@ import "./ProfilePage.css";
 
 import Photo from "./Photo/Photo.js";
 import Name from "./Name/Name.js";
-import Button from "./Button/Button.js";
+import Button from "../LoginPage/Button/Button.js";
 
 class ProfilePage extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class ProfilePage extends Component {
       >
         <Photo photod={this.props.photo} />
         <Name named={this.props.name} />
-        <Button text="Logout" />
+        <Button className={"profile-form__button"} text="Logout" />
       </form>
     );
   }

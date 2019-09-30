@@ -34,7 +34,7 @@ class LoginPage extends Component {
           onChange={this.props.handlePasswordChange}
         />
         <Error error={this.props.errorBlock} />
-        <Button text={"Login"} />
+        <Button className={"signIn-form__button"} text={"Login"} />
       </form>
     );
   }
