@@ -16,7 +16,7 @@ class LoginPage extends Component {
   render() {
     return (
       <form
-        className="signIn-form signIn-center"
+        className="signIn-form signIn-form_center"
         onSubmit={this.props.handleSubmit}
         style={{ display: `${this.props.display}` }}
       >
