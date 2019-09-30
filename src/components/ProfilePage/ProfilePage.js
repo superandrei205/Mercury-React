@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import './ProfilePage.css';
+import "./ProfilePage.css";
 
 import Photo from "./Photo/Photo.js";
 import Name from "./Name/Name.js";
@@ -15,7 +15,7 @@ class ProfilePage extends Component {
   render() {
     return (
       <form
-        className="profile-form profile-column"
+        className="profile-form profile-form_center"
         onSubmit={this.props.removeProfile}
         style={{ display: `${this.props.display}` }}
       >

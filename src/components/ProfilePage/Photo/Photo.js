@@ -1,11 +1,9 @@
 import React from "react";
 
-import './Photo.css';
-
 function Photo(props) {
   return (
     <div
-      className="photo"
+      className="profile-form__photo"
       style={{ backgroundImage: `url(${props.photod})` }}
     ></div>
   );
