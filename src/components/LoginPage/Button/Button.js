@@ -1,10 +1,8 @@
 import React from "react";
 
-import './Button.css';
-
 function Button(props) {
   return (
-    <button className='search-form__button' type="submit">
+    <button className={props.className} type="submit">
       {props.text}
     </button>
   );

@@ -76,12 +76,12 @@ class App extends Component {
     }).then(data => {
       if (data.error) {
         console.error(data.error);
-        document.querySelector(".search-form__error").style.display = "block";
-        this.setState({ error: "search-form__input_error" });
+        document.querySelector(".signIn-form__error").style.display = "block";
+        this.setState({ error: "signIn-form__input_error" });
         return;
       }
 
-      document.querySelector(".search-form__error").style.display = "none";
+      document.querySelector(".signIn-form__error").style.display = "none";
       this.setProfile("profile", JSON.stringify(data));
       this.renderName(data);
       console.log(data);
@@ -105,7 +105,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="column">
+      <div className="app">
         <div className="logo"></div>
         <LoginPage
           display={this.state.displayLogin}

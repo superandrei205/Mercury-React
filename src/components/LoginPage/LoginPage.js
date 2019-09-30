@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import './LoginPage.css';
+import "./LoginPage.css";
 
 import Title from "./Title/Title.js";
 import Input from "./Input/Input.js";
@@ -16,25 +16,25 @@ class LoginPage extends Component {
   render() {
     return (
       <form
-        className="search-form search-column"
+        className="signIn-form signIn-center"
         onSubmit={this.props.handleSubmit}
         style={{ display: `${this.props.display}` }}
       >
         <Title />
         <Input
-          className={`search-form__input search-form__input_email ${this.props.error}`}
+          className={`signIn-form__input signIn-form__input_email ${this.props.error}`}
           type="email"
           placeholder="email"
           onChange={this.props.handleEmailChange}
         />
         <Input
-          className={`search-form__input search-form__input_password ${this.props.error}`}
+          className={`signIn-form__input signIn-form__input_password ${this.props.error}`}
           type="password"
           placeholder="password"
           onChange={this.props.handlePasswordChange}
         />
         <Error />
-        <Button text={"Login"} />
+        <Button className={`signIn-form__button`} text={"Login"} />
       </form>
     );
   }

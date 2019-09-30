@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-import './ProfilePage.css';
+import "./ProfilePage.css";
 
 import Photo from "./Photo/Photo.js";
 import Name from "./Name/Name.js";
-import Button from "./Button/Button.js";
+import Button from "../LoginPage/Button/Button.js";
 
 class ProfilePage extends Component {
   constructor(props) {
@@ -15,13 +15,13 @@ class ProfilePage extends Component {
   render() {
     return (
       <form
-        className="profile-form profile-column"
+        className="profile-form profile-center"
         onSubmit={this.props.removeProfile}
         style={{ display: `${this.props.display}` }}
       >
         <Photo photod={this.props.photo} />
         <Name named={this.props.name} />
-        <Button text="Logout" />
+        <Button className={`profile-form__button`} text="Logout" />
       </form>
     );
   }
