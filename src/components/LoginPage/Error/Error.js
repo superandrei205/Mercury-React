@@ -2,7 +2,9 @@ import React from "react";
 
 function Error(props) {
   return (
-    <div className="signIn-form__error">E-mail or password is incorrect</div>
+    <div className="signIn-form__error" style={{ display: `${props.error}` }}>
+      E-mail or password is incorrect
+    </div>
   );
 }
 

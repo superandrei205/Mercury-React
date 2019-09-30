@@ -33,7 +33,7 @@ class LoginPage extends Component {
           placeholder="password"
           onChange={this.props.handlePasswordChange}
         />
-        <Error />
+        <Error error={this.props.errorBlock} />
         <Button text={"Login"} />
       </form>
     );

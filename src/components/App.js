@@ -17,12 +17,14 @@ class App extends Component {
       photo: "",
       email: "",
       password: "",
+      errorBlock: "none",
       displayLogin: "flex",
       displayProfile: "none",
       error: ""
     };
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.showErrorBlock = this.showErrorBlock.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.login = this.login.bind(this);
     this.setProfile = this.setProfile.bind(this);
@@ -46,6 +48,14 @@ class App extends Component {
       });
     }
     this.setState({ password: event.target.value });
+  }
+
+  showErrorBlock(err) {
+    if (err) {
+      this.setState({
+        errorBlock: "block"
+      });
+    }
   }
 
   login(data = {}) {
@@ -76,12 +86,11 @@ class App extends Component {
     }).then(data => {
       if (data.error) {
         console.error(data.error);
-        document.querySelector(".signIn-form__error").style.display = "block";
         this.setState({ error: "signIn-form__input_error" });
+        this.showErrorBlock(this.state.error);
         return;
       }
 
-      document.querySelector(".signIn-form__error").style.display = "none";
       this.setProfile("profile", JSON.stringify(data));
       this.renderName(data);
       console.log(data);
@@ -98,7 +107,8 @@ class App extends Component {
       displayProfile: "none",
       email: "",
       password: "",
-      error: ""
+      error: "",
+      errorBlock: "none"
     });
     document.cookie = "profile=null";
   }
@@ -113,6 +123,7 @@ class App extends Component {
           handleEmailChange={this.handleEmailChange}
           handlePasswordChange={this.handlePasswordChange}
           error={this.state.error}
+          errorBlock={this.state.errorBlock}
         />
         <ProfilePage
           display={this.state.displayProfile}
