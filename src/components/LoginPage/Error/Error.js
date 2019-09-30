@@ -1,9 +1,16 @@
 import React from "react";
 
-import './Error.css';
+import "./Error.css";
 
 function Error(props) {
-  return <div className="search-form__error">E-mail or password is incorrect</div>;
+  return (
+    <div
+      className="search-form__error"
+      style={{ display: `${props.errorBlock}` }}
+    >
+      E-mail or password is incorrect
+    </div>
+  );
 }
 
 export default Error;

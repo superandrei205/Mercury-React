@@ -17,6 +17,7 @@ class App extends Component {
       photo: "",
       email: "",
       password: "",
+      errorBlock: "none",
       displayLogin: "flex",
       displayProfile: "none",
       error: ""
@@ -24,6 +25,7 @@ class App extends Component {
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.showErrorBlock = this.showErrorBlock.bind(this);
     this.login = this.login.bind(this);
     this.setProfile = this.setProfile.bind(this);
     this.renderName = this.renderName.bind(this);
@@ -37,6 +39,14 @@ class App extends Component {
       });
     }
     this.setState({ email: event.target.value });
+  }
+
+  showErrorBlock(err) {
+    if (err) {
+      this.setState({
+        errorBlock: "block"
+      });
+    }
   }
 
   handlePasswordChange(event) {
@@ -76,12 +86,12 @@ class App extends Component {
     }).then(data => {
       if (data.error) {
         console.error(data.error);
-        document.querySelector(".search-form__error").style.display = "block";
         this.setState({ error: "search-form__input_error" });
+        this.showErrorBlock(this.state.errorBlock);
         return;
       }
 
-      document.querySelector(".search-form__error").style.display = "none";
+      this.showErrorBlock(this.state.errorBlock);
       this.setProfile("profile", JSON.stringify(data));
       this.renderName(data);
       console.log(data);
@@ -94,6 +104,7 @@ class App extends Component {
     this.setState({
       name: "",
       photo: "",
+      errorBlock: "none",
       displayLogin: "flex",
       displayProfile: "none",
       email: "",
@@ -113,6 +124,7 @@ class App extends Component {
           handleEmailChange={this.handleEmailChange}
           handlePasswordChange={this.handlePasswordChange}
           error={this.state.error}
+          errorBlock={this.state.errorBlock}
         />
         <ProfilePage
           display={this.state.displayProfile}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import './LoginPage.css';
+import "./LoginPage.css";
 
 import Title from "./Title/Title.js";
 import Input from "./Input/Input.js";
@@ -33,7 +33,7 @@ class LoginPage extends Component {
           placeholder="password"
           onChange={this.props.handlePasswordChange}
         />
-        <Error />
+        <Error errorBlock={this.props.errorBlock} />
         <Button text={"Login"} />
       </form>
     );
