@@ -1,8 +1,9 @@
 import React from "react";
 
 function Button(props) {
+  const { className } = props;
   return (
-    <button className={props.className} type="submit">
+    <button className={className} type="submit">
       {props.text}
     </button>
   );
