@@ -115,8 +115,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="column">
-        <div className="logo"></div>
+      <div className="app_center">
+        <div className="app__logo"></div>
         <LoginPage
           display={this.state.displayLogin}
           handleSubmit={this.handleSubmit}
