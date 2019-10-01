@@ -20,63 +20,57 @@ class App extends Component {
       errorBlock: "none",
       displayLogin: "flex",
       displayProfile: "none",
-      error: ""
+      errorClassName: ""
     };
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
-    this.showErrorBlock = this.showErrorBlock.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.login = this.login.bind(this);
-    this.setProfile = this.setProfile.bind(this);
-    this.renderName = this.renderName.bind(this);
-    this.removeProfile = this.removeProfile.bind(this);
   }
 
-  handleEmailChange(event) {
+  handleEmailChange = event => {
     if (this.state.error) {
       this.setState({
-        error: ""
+        errorClassName: ""
       });
     }
+
     this.setState({ email: event.target.value });
-  }
+  };
 
-  handlePasswordChange(event) {
+  handlePasswordChange = event => {
     if (this.state.error) {
       this.setState({
-        error: ""
+        errorClassName: ""
       });
     }
-    this.setState({ password: event.target.value });
-  }
 
-  showErrorBlock(err) {
+    this.setState({ password: event.target.value });
+  };
+
+  showErrorBlock = err => {
     if (err) {
       this.setState({
         errorBlock: "block"
       });
     }
-  }
+  };
 
-  login(data = {}) {
+  login = (data = {}) => {
     return fetch(API_URL, {
       method: METHOD,
       headers: HEADERS,
       body: JSON.stringify(data)
     }).then(response => response.json());
-  }
+  };
 
-  setProfile(name, profile) {
+  setProfile = (name, profile) => {
     if (name && profile) document.cookie = `${name}=${profile}`;
-  }
+  };
 
-  renderName(data) {
+  renderName = data => {
     this.setState({ name: data.name });
     this.setState({ photo: data.photoUrl });
     this.setState({ displayLogin: "none", displayProfile: "flex" });
-  }
+  };
 
-  handleSubmit(event) {
+  handleSubmit = event => {
     event.preventDefault();
     event.stopPropagation();
 
@@ -86,8 +80,8 @@ class App extends Component {
     }).then(data => {
       if (data.error) {
         console.error(data.error);
-        this.setState({ error: "signIn-form__input_error" });
-        this.showErrorBlock(this.state.error);
+        this.setState({ errorClassName: "signIn-form__input_error" });
+        this.showErrorBlock(this.state.errorClassName);
         return;
       }
 
@@ -95,9 +89,9 @@ class App extends Component {
       this.renderName(data);
       console.log(data);
     });
-  }
+  };
 
-  removeProfile(event) {
+  removeProfile = event => {
     event.preventDefault();
     event.stopPropagation();
     this.setState({
@@ -107,11 +101,11 @@ class App extends Component {
       displayProfile: "none",
       email: "",
       password: "",
-      error: "",
+      errorClassName: "",
       errorBlock: "none"
     });
     document.cookie = "profile=null";
-  }
+  };
 
   render() {
     return (
@@ -122,7 +116,7 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
           handleEmailChange={this.handleEmailChange}
           handlePasswordChange={this.handlePasswordChange}
-          error={this.state.error}
+          errorClassName={this.state.errorClassName}
           errorBlock={this.state.errorBlock}
         />
         <ProfilePage

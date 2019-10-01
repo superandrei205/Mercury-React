@@ -46,7 +46,7 @@ body {
   height: 52px;
   margin: 141px auto 125px;
 
-  background-image: url(".//images/mercury-development.svg");
+  background-image: url("./images/mercury-development.svg");
   background-repeat: no-repeat;
 }
 
