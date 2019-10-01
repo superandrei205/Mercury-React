@@ -70,7 +70,6 @@
 }
 
 .signIn-form__error {
-  display: none;
   margin-top: 32px;
   padding: 11px 110px 9px 16px;
   width: 100%;
@@ -81,6 +80,14 @@
 
   font-family: "gotham_pro_medium";
   font-size: 14px;
+}
+
+.show_block {
+  display: block;
+}
+
+.hide_block {
+  display: none;
 }
 
 .signIn-form__button {

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import "./ProfilePage.css";
 
@@ -7,14 +7,10 @@ import Name from "./Name/Name.js";
 import Button from "../LoginPage/Button/Button.js";
 
 function ProfilePage(props) {
-  const { removeProfile, display, photo, name } = props;
+  const { removeProfile, photo, name } = props;
 
   return (
-    <form
-      className="profile-form profile-form_center"
-      onSubmit={removeProfile}
-      style={{ display }}
-    >
+    <form className="profile-form profile-form_center" onSubmit={removeProfile}>
       <Photo photod={photo} />
       <Name named={name} />
       <Button className="profile-form__button" text="Logout" />
