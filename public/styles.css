@@ -1,26 +1,26 @@
 @font-face {
-    font-family: 'gotham_pro_black';
-    src: url('./fonts/GothamPro-Black.woff') format('woff'),
-         url('./fonts/GothamPro-Black.woff2') format('woff2');
-        font-weight: normal;
-        font-style: normal;
-    }
+  font-family: "gotham_pro_black";
+  src: url("./fonts/GothamPro-Black.woff") format("woff"),
+    url("./fonts/GothamPro-Black.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
-    font-family: 'gotham_pro_bold';
-    src: url('./fonts/GothamPro-Bold.woff') format('woff'),
-         url('./fonts/GothamPro-Bold.woff2') format('woff2');
-        font-weight: normal;
-        font-style: normal;
-    }
+  font-family: "gotham_pro_bold";
+  src: url("./fonts/GothamPro-Bold.woff") format("woff"),
+    url("./fonts/GothamPro-Bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
-    font-family: 'gotham_pro_medium';
-    src: url('./fonts/GothamPro-Medium.woff') format('woff'),
-         url('./fonts/GothamPro-Medium.woff2') format('woff2');
-        font-weight: normal;
-        font-style: normal;
-    }
+  font-family: "gotham_pro_medium";
+  src: url("./fonts/GothamPro-Medium.woff") format("woff"),
+    url("./fonts/GothamPro-Medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 
 html,
 body {
@@ -33,31 +33,31 @@ body {
 }
 
 body {
-  background-image: url('./images/background.jpg');
+  background-image: url("./images/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  font-family: 'gotham_pro_black';
+  font-family: "gotham_pro_black";
 }
 
-.logo {
+.app__logo {
   width: 220px;
   height: 52px;
   margin: 141px auto 125px;
 
-  background-image: url('./images/mercury-development.svg');
+  background-image: url("./images/mercury-development.svg");
   background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 1280px) {
-  .logo {
+  .app__logo {
     margin: 70px auto;
   }
 }
 
 @media screen and (max-width: 720px) {
-  .logo {
+  .app__logo {
     margin: 43px auto 37px;
-  } 
+  }
 }

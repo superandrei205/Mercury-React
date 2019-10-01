@@ -1,18 +1,16 @@
 import React from "react";
 
-import './Input.css';
-import './Input__email.css';
-import './input__password.css';
-
 function Input(props) {
+  const { className, type, placeholder, onChange, value } = props;
+
   return (
     <input
-      className={props.className}
-      type={props.type}
-      placeholder={props.placeholder}
+      className={className}
+      type={type}
+      placeholder={placeholder}
       required
-      onChange={props.onChange}
-      value={props.value}
+      onChange={onChange}
+      value={value}
     />
   );
 }

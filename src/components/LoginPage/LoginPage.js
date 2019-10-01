@@ -1,43 +1,59 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-import './LoginPage.css';
+import "./LoginPage.css";
 
 import Title from "./Title/Title.js";
 import Input from "./Input/Input.js";
 import Error from "./Error/Error.js";
 import Button from "./Button/Button.js";
 
-class LoginPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+function LoginPage(props) {
+  const { handleSubmit, hasError } = props;
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function handleInputChange(event) {
+    const { type, value } = event.target;
+
+    if (type === "email") setEmail(value);
+
+    if (type === "password") setPassword(value);
   }
 
-  render() {
-    return (
-      <form
-        className="search-form search-column"
-        onSubmit={this.props.handleSubmit}
-        style={{ display: `${this.props.display}` }}
-      >
-        <Title />
-        <Input
-          className={`search-form__input search-form__input_email ${this.props.error}`}
-          type="email"
-          placeholder="email"
-          onChange={this.props.handleEmailChange}
-        />
-        <Input
-          className={`search-form__input search-form__input_password ${this.props.error}`}
-          type="password"
-          placeholder="password"
-          onChange={this.props.handlePasswordChange}
-        />
-        <Error />
-        <Button text={"Login"} />
-      </form>
-    );
+  function onSubmit(event) {
+    handleSubmit(event, { email, password });
   }
+
+  return (
+    <form className="signIn-form signIn-form_center" onSubmit={onSubmit}>
+      <Title />
+      <Input
+        className={`signIn-form__input signIn-form__input_email ${
+          hasError ? "signIn-form__input_error" : ""
+        }`}
+        type="email"
+        placeholder="email"
+        value={email}
+        onChange={handleInputChange}
+      />
+      <Input
+        className={`signIn-form__input signIn-form__input_password ${
+          hasError ? "signIn-form__input_error" : ""
+        }`}
+        type="password"
+        placeholder="password"
+        value={password}
+        onChange={handleInputChange}
+      />
+      <Error
+        className={`signIn-form__error ${
+          hasError ? "show_block" : "hide_block"
+        } `}
+      />
+      <Button className="signIn-form__button" text="Login" />
+    </form>
+  );
 }
 
 export default LoginPage;
