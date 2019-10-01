@@ -37,7 +37,7 @@ function LoginPage(props) {
         onChange={handlePasswordChange}
       />
       <Error error={errorBlock} />
-      <Button className="signIn-form__button" text={"Login"} />
+      <Button className="signIn-form__button" text="Login" />
     </form>
   );
 }
