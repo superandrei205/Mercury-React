@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-import "./LoginPage.css";
+import "./LoginForm.css";
 
 import Title from "../Title/Title.js";
 import Input from "../Input/Input.js";
 import Error from "../Error/Error.js";
 import Button from "../Button/Button.js";
 
-function LoginPage(props) {
+function LoginForm(props) {
   const { handleSubmit, hasError } = props;
 
   const [email, setEmail] = useState("");
@@ -26,10 +26,10 @@ function LoginPage(props) {
   }
 
   return (
-    <form className="loginPage app__loginPage" onSubmit={onSubmit}>
+    <form className="loginForm app__loginForm" onSubmit={onSubmit}>
       <Title />
       <Input
-        className="loginPage__input_email"
+        className="loginForm__input_email"
         isError={hasError}
         type="email"
         placeholder="email"
@@ -37,17 +37,17 @@ function LoginPage(props) {
         onChange={handleInputChange}
       />
       <Input
-        className="loginPage__input_password"
+        className="loginForm__input_password"
         isError={hasError}
         type="password"
         placeholder="password"
         value={password}
         onChange={handleInputChange}
       />
-      {hasError && <Error className="loginPage__error" />}
-      <Button className="loginPage__button" text="Login" />
+      {hasError && <Error className="loginForm__error" />}
+      <Button className="loginForm__button" text="Login" />
     </form>
   );
 }
 
-export default LoginPage;
+export default LoginForm;

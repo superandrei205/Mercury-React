@@ -3,8 +3,8 @@ import { render } from "react-dom";
 
 import "./App.css";
 
-import LoginPage from "./components/LoginPage/LoginPage.js";
-import ProfilePage from "./components/ProfilePage/ProfilePage.js";
+import LoginForm from "./components/LoginForm/LoginForm.js";
+import UserProfile from "./components/UserProfile/UserProfile.js";
 
 const METHOD = "POST";
 const API_URL = "https://us-central1-mercdev-academy.cloudfunctions.net/login";
@@ -16,6 +16,7 @@ const DEFAULT_STATE = {
   photo: "",
   hasError: false
 };
+
 class App extends Component {
   state = DEFAULT_STATE;
 
@@ -74,10 +75,10 @@ class App extends Component {
       <div className="app">
         <div className="logo app__logo"></div>
         {page === "login" && (
-          <LoginPage handleSubmit={this.handleSubmit} hasError={hasError} />
+          <LoginForm handleSubmit={this.handleSubmit} hasError={hasError} />
         )}
         {page === "profile" && (
-          <ProfilePage name={name} photo={photo} logout={this.logout} />
+          <UserProfile name={name} photo={photo} logout={this.logout} />
         )}
       </div>
     );

@@ -1,4 +1,4 @@
-.loginPage {
+.userProfile {
   padding: 48px 48px 60px;
   width: 27%;
   border-radius: 8px;
@@ -7,24 +7,16 @@
   background-color: #ffffff;
 }
 
-.loginPage__input_email {
-  margin-top: 48px;
+.userProfile__name {
+  margin: 40px 0 0;
 }
 
-.loginPage__input_password {
-  margin-top: 32px;
-}
-
-.loginPage__error {
-  margin-top: 24px;
-}
-
-.loginPage__button {
+.userProfile__button {
   margin: 48px 0 0 0;
 }
 
 @media screen and (max-width: 1280px) {
-  .loginPage {
+  .userProfile {
     margin-bottom: 200px;
     padding: 40px 32px 56px;
     width: 50%;
@@ -32,21 +24,18 @@
 }
 
 @media screen and (max-width: 720px) {
-  .loginPage {
+  .userProfile {
     margin-bottom: 107px;
     padding: 32px 24px 48px;
     width: 80%;
   }
 
-  .loginPage__button {
+  .userProfile__name {
+    margin: 24px 0 0;
+    font-size: 18px;
+  }
+
+  .userProfile__button {
     margin: 40px 0 0 0;
-  }
-
-  .loginPage_input_email {
-    margin-top: 32px;
-  }
-
-  .loginPage__input_password {
-    margin-top: 24px;
   }
 }

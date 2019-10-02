@@ -8,8 +8,8 @@
   margin: 141px auto 125px;
 }
 
-.app__loginPage,
-.app__profilePage {
+.app__loginForm,
+.app__userProfile {
   display: flex;
   flex-direction: column;
   align-items: center;
