@@ -7,7 +7,7 @@ function Input(props) {
 
   return (
     <input
-      className={`input ${className} ${isError ? "input_error" : ""}`}
+      className={`input ${className} ${isError && "input_error"}`}
       type={type}
       placeholder={placeholder}
       required
