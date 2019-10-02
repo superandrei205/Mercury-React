@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../Error/Error.css";
+
 function Error(props) {
   const { className } = props;
 

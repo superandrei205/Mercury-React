@@ -1,9 +1,6 @@
 import React from "react";
 
 import "./ProfilePage.css";
-import "../Photo/Photo.css";
-import "../Name/Name.css";
-import "../Button/Button.css";
 
 import Photo from "../Photo/Photo.js";
 import Name from "../Name/Name.js";

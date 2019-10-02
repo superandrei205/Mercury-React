@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../Button/Button.css";
+
 function Button(props) {
   const { className, onClick } = props;
   return (

@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 
 import "./LoginPage.css";
-import "../Title/Title.css";
-import "../Input/Input.css";
-import "../Error/Error.css";
-import "../Button/Button.css";
 
 import Title from "../Title/Title.js";
 import Input from "../Input/Input.js";

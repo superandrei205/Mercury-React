@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../Photo/Photo.css";
+
 function Photo(props) {
   const { photod } = props;
 
