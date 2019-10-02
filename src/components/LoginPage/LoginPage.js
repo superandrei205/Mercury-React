@@ -42,11 +42,7 @@ function LoginPage(props) {
         value={password}
         onChange={handleInputChange}
       />
-      <Error
-        className={`loginPage__error ${
-          hasError ? "show_block" : "hide_block"
-        } `}
-      />
+      {hasError && <Error className="loginPage__error" />}
       <Button className="loginPage__button" text="Login" />
     </form>
   );
