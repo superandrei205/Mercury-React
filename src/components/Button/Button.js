@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../Button/Button.css";
+import "./Button.css";
 
 function Button(props) {
   const { className, onClick } = props;

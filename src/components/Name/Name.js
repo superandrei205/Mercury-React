@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../Name/Name.css";
+import "./Name.css";
 
 function Name(props) {
   const { named, className } = props;

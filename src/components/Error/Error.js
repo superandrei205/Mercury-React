@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../Error/Error.css";
+import "./Error.css";
 
 function Error(props) {
   const { className } = props;

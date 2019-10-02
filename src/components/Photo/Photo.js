@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../Photo/Photo.css";
+import "./Photo.css";
 
 function Photo(props) {
   const { photod } = props;
