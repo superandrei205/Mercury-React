@@ -30,32 +30,28 @@ function LoginPage(props) {
   }
 
   return (
-    <form className="signIn-form signIn-form_center" onSubmit={onSubmit}>
+    <form className="loginPage app__loginPage" onSubmit={onSubmit}>
       <Title />
       <Input
-        className={`signIn-form__input signIn-form__input_email ${
-          hasError ? "signIn-form__input_error" : ""
-        }`}
+        className={`loginPage__input_email ${hasError ? "input_error" : ""}`}
         type="email"
         placeholder="email"
         value={email}
         onChange={handleInputChange}
       />
       <Input
-        className={`signIn-form__input signIn-form__input_password ${
-          hasError ? "signIn-form__input_error" : ""
-        }`}
+        className={`loginPage__input_password ${hasError ? "input_error" : ""}`}
         type="password"
         placeholder="password"
         value={password}
         onChange={handleInputChange}
       />
       <Error
-        className={`signIn-form__error ${
+        className={`loginPage__error ${
           hasError ? "show_block" : "hide_block"
         } `}
       />
-      <Button className="signIn-form__button" text="Login" />
+      <Button className="loginPage__button" text="Login" />
     </form>
   );
 }

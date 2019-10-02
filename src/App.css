@@ -1,5 +1,29 @@
-.app_center {
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.app__logo {
+  margin: 141px auto 125px;
+}
+
+.app__loginPage,
+.app__profilePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 335px;
+}
+
+@media screen and (max-width: 1280px) {
+  .app__logo {
+    margin: 70px auto;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .app__logo {
+    margin: 43px auto 37px;
+  }
 }

@@ -4,10 +4,7 @@ function Photo(props) {
   const { photod } = props;
 
   return (
-    <div
-      className="profile-form__photo"
-      style={{ backgroundImage: `url(${photod})` }}
-    ></div>
+    <div className="photo" style={{ backgroundImage: `url(${photod})` }}></div>
   );
 }
 

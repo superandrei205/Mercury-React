@@ -1,11 +1,9 @@
 import React from "react";
 
 function Name(props) {
-  const { named } = props;
+  const { named, className } = props;
 
-  return (
-    <h2 className="profile-form__name profile-form__name_text">{named}</h2>
-  );
+  return <h2 className={`name ${className}`}>{named}</h2>;
 }
 
 export default Name;

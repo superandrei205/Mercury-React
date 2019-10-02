@@ -5,7 +5,7 @@ function Input(props) {
 
   return (
     <input
-      className={className}
+      className={`input ${className}`}
       type={type}
       placeholder={placeholder}
       required

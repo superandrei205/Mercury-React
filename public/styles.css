@@ -49,23 +49,10 @@ body {
   display: none;
 }
 
-.app__logo {
+.logo {
   width: 220px;
   height: 52px;
-  margin: 141px auto 125px;
 
   background-image: url("./images/mercury-development.svg");
   background-repeat: no-repeat;
-}
-
-@media screen and (max-width: 1280px) {
-  .app__logo {
-    margin: 70px auto;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .app__logo {
-    margin: 43px auto 37px;
-  }
 }

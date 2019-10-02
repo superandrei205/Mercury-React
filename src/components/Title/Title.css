@@ -1,9 +1,10 @@
-.signIn-form__title_text {
+.title {
   height: 29px;
 
   color: #262626;
 
   font-family: "gotham_pro_bold";
+  font-size: 24px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
@@ -11,10 +12,4 @@
   letter-spacing: 0.2px;
 
   opacity: 0.8;
-}
-
-.signIn-form__title {
-  margin: 0;
-
-  font-size: 24px;
 }

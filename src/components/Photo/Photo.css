@@ -1,4 +1,4 @@
-.profile-form__photo {
+.photo {
   width: 128px;
   height: 128px;
   border: solid 1px #979797;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 720px) {
-  .profile-form__photo {
+  .photo {
     width: 86px;
     height: 86px;
   }

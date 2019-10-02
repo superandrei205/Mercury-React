@@ -71,8 +71,8 @@ class App extends Component {
     const { page, hasError, name, photo } = this.state;
 
     return (
-      <div className="app_center">
-        <div className="app__logo"></div>
+      <div className="app">
+        <div className="logo app__logo"></div>
         {page === "login" && (
           <LoginPage handleSubmit={this.handleSubmit} hasError={hasError} />
         )}
