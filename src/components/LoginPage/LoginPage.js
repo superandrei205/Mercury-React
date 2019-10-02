@@ -29,14 +29,16 @@ function LoginPage(props) {
     <form className="loginPage app__loginPage" onSubmit={onSubmit}>
       <Title />
       <Input
-        className={`loginPage__input_email ${hasError ? "input_error" : ""}`}
+        className="loginPage__input_email"
+        isError={hasError}
         type="email"
         placeholder="email"
         value={email}
         onChange={handleInputChange}
       />
       <Input
-        className={`loginPage__input_password ${hasError ? "input_error" : ""}`}
+        className="loginPage__input_password"
+        isError={hasError}
         type="password"
         placeholder="password"
         value={password}
