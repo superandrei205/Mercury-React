@@ -1,0 +1,28 @@
+.profile-form__name {
+  margin: 40px 0 0;
+
+  font-family: "gotham_pro_bold";
+  font-size: 24px;
+}
+
+.profile-form__name_text {
+  height: 29px;
+
+  color: #262626;
+
+  font-family: "gotham_pro_bold";
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+
+  opacity: 0.8;
+}
+
+@media screen and (max-width: 720px) {
+  .profile-form__name {
+    margin: 24px 0 0;
+    font-size: 18px;
+  }
+}

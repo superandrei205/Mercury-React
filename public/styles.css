@@ -41,6 +41,14 @@ body {
   font-family: "gotham_pro_black";
 }
 
+.show_block {
+  display: block;
+}
+
+.hide_block {
+  display: none;
+}
+
 .app__logo {
   width: 220px;
   height: 52px;
