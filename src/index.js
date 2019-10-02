@@ -58,7 +58,7 @@ class App extends Component {
     });
   };
 
-  removeProfile = event => {
+  logout = event => {
     event.preventDefault();
     event.stopPropagation();
 
@@ -77,11 +77,7 @@ class App extends Component {
           <LoginPage handleSubmit={this.handleSubmit} hasError={hasError} />
         )}
         {page === "profile" && (
-          <ProfilePage
-            name={name}
-            photo={photo}
-            removeProfile={this.removeProfile}
-          />
+          <ProfilePage name={name} photo={photo} logout={this.logout} />
         )}
       </div>
     );
