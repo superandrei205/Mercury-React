@@ -7,13 +7,15 @@ import Name from "../Name/Name.js";
 import Button from "../Button/Button.js";
 
 function UserProfile(props) {
-  const { logout, photo, name } = props;
+  const { handleLogout, photo, name } = props;
 
   return (
-    <div className="userProfile app__userProfile">
-      <Photo photod={photo} />
-      <Name named={name} className="userProfile__name" />
-      <Button onClick={logout} className="userProfile__button" text="Logout" />
+    <div className="userProfile">
+      <Photo photo={photo} />
+      <Name name={name} className="userProfile__name" />
+      <Button onClick={handleLogout} className="userProfile__button">
+        Logout
+      </Button>
     </div>
   );
 }

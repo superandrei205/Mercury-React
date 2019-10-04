@@ -5,6 +5,7 @@ import "./App.css";
 
 import LoginForm from "./components/LoginForm/LoginForm.js";
 import UserProfile from "./components/UserProfile/UserProfile.js";
+import Wrapper from "./components/Wrapper/Wrapper.js";
 
 const METHOD = "POST";
 const API_URL = "https://us-central1-mercdev-academy.cloudfunctions.net/login";
@@ -59,7 +60,7 @@ class App extends Component {
     });
   };
 
-  logout = event => {
+  handleLogout = event => {
     event.preventDefault();
     event.stopPropagation();
 
@@ -73,12 +74,20 @@ class App extends Component {
 
     return (
       <div className="app">
-        <div className="logo app__logo"></div>
+        <div className="logo app__logo" />
         {page === "login" && (
-          <LoginForm handleSubmit={this.handleSubmit} hasError={hasError} />
+          <Wrapper>
+            <LoginForm handleSubmit={this.handleSubmit} hasError={hasError} />
+          </Wrapper>
         )}
         {page === "profile" && (
-          <UserProfile name={name} photo={photo} logout={this.logout} />
+          <Wrapper>
+            <UserProfile
+              name={name}
+              photo={photo}
+              handleLogout={this.handleLogout}
+            />
+          </Wrapper>
         )}
       </div>
     );

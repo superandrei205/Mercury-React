@@ -1,5 +1,6 @@
 import React from "react";
 
+import { controlClassName } from "../../helper.js";
 import "./Input.css";
 
 function Input(props) {
@@ -7,7 +8,8 @@ function Input(props) {
 
   return (
     <input
-      className={`input ${className} ${isError && "input_error"}`}
+      className={`input ${controlClassName(className)} ${isError &&
+        "input_error"}`}
       type={type}
       placeholder={placeholder}
       required

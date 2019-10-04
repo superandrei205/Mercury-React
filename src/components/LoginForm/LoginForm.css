@@ -1,10 +1,7 @@
 .loginForm {
-  padding: 48px 48px 60px;
-  width: 27%;
-  border-radius: 8px;
-
-  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.15);
-  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .loginForm__input_email {
@@ -23,21 +20,7 @@
   margin: 48px 0 0 0;
 }
 
-@media screen and (max-width: 1280px) {
-  .loginForm {
-    margin-bottom: 200px;
-    padding: 40px 32px 56px;
-    width: 50%;
-  }
-}
-
 @media screen and (max-width: 720px) {
-  .loginForm {
-    margin-bottom: 107px;
-    padding: 32px 24px 48px;
-    width: 80%;
-  }
-
   .loginForm_input_email {
     margin-top: 32px;
   }

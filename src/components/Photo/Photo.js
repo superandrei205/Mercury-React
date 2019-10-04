@@ -3,10 +3,10 @@ import React from "react";
 import "./Photo.css";
 
 function Photo(props) {
-  const { photod } = props;
+  const { photo } = props;
 
   return (
-    <div className="photo" style={{ backgroundImage: `url(${photod})` }}></div>
+    <div className="photo" style={{ backgroundImage: `url(${photo})` }}></div>
   );
 }
 

@@ -2,18 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 335px;
 }
 
 .app__logo {
   margin: 141px auto 125px;
-}
-
-.app__loginForm,
-.app__userProfile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 335px;
 }
 
 @media screen and (max-width: 1280px) {

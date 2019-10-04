@@ -26,7 +26,7 @@ function LoginForm(props) {
   }
 
   return (
-    <form className="loginForm app__loginForm" onSubmit={onSubmit}>
+    <form className="loginForm" onSubmit={onSubmit}>
       <Title />
       <Input
         className="loginForm__input_email"
@@ -45,7 +45,7 @@ function LoginForm(props) {
         onChange={handleInputChange}
       />
       {hasError && <Error className="loginForm__error" />}
-      <Button className="loginForm__button" text="Login" />
+      <Button className="loginForm__button">Login</Button>
     </form>
   );
 }
