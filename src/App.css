@@ -1,0 +1,22 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 335px;
+}
+
+.app__logo {
+  margin: 141px auto 125px;
+}
+
+@media screen and (max-width: 1280px) {
+  .app__logo {
+    margin: 70px auto;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .app__logo {
+    margin: 43px auto 37px;
+  }
+}
